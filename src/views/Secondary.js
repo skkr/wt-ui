@@ -21,8 +21,18 @@ export default class Secondary extends Component {
     };
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.setLoader(+1);
+    }, 1);
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      this.props.setLoader(-1);
+    }, 3000);
   }
 
   render () {

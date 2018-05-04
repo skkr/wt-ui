@@ -16,12 +16,22 @@ export default class Main extends Component {
     };
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.setLoader(+1);
+    }, 1);
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      this.props.setLoader(-1);
+    }, 6000);
   }
 
   render () {
-    const {showAlert} = this.props;
+    const {showAlert, loadItems} = this.props;
 
     const Badge = (num) => {
       if (num != undefined) {
@@ -54,7 +64,9 @@ export default class Main extends Component {
           <div className="col-12">
 
               <div className="page-header">
-                <h1 className="text--xxl animated tdFadeInRight" style={{animationDuration: '3s'}}>
+                <h1 className={`text--xxl ${loadItems>0 && 'animated tdFadeInRight'}`}
+                  style={{animationDuration: '3s'}}
+                >
                   Basic React Aplication
                 </h1>
                 <p className="lead mb-3">A boilerplate made with ReactJs, conceived to facilitate the building of the UI in future projects.</p>

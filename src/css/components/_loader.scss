@@ -1,0 +1,135 @@
+/* Loader */
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.is-ready {
+  #app-content {
+    animation: fadein .3s !important;
+  }
+}
+
+
+.is-loading {
+
+  &, & * {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  #app-footer {
+    opacity: 0;
+    animation: fadein .3s;
+    * {visibility:hidden;}
+    background: linear-gradient(135deg,  #f8f8f8 0,transparent 700px);
+  }
+
+  #app-content {
+    animation: fadein .3s;
+    h1, h2, h3, h4, h5, h6, pre {
+      &, & * {
+        color: transparent !important;
+        // background-color: rgb(248, 248, 248) !important;
+        background: linear-gradient(135deg,  #f8f8f8 0,transparent 700px);
+        display:inline-block !important;
+        border: none !important;
+        * {animation: none;}
+      }
+      & * {
+        color: transparent !important;
+        background: transparent !important;
+      }
+      &::after {content: 'asas' !important; display: table !important;}
+    }
+    img {filter: contrast(0%) brightness(195.6%);}
+    li {
+      outline: 1px solid #fff !important;
+      outline-offset: -1px !important;
+    }
+    p, small, code, a, .btn, li, img  {
+      animation: fadein .5s !important;
+      & {
+        color: transparent !important;
+        // background-color: rgb(248, 248, 248) !important;
+        background: linear-gradient(135deg,  #f8f8f8 0%,#fcfcfc 100%);
+        border: none !important;
+      }
+      & * {
+        color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+      }
+      * {animation: none;}
+    }
+    ul {list-style: none!important;}
+    img {display:block!important;}
+  }
+
+}
+
+.preloader {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 53px;
+  color:#fff;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
+
+  .preloader__bar {
+    overflow: hidden;
+    position: fixed;
+    // top: 121px;
+    top: 0;
+    left: 0;
+    width: 0;
+    // height: 10px;
+    height: 3px;
+    background: $altGreen;
+    transition: width .5s ease-in-out;
+  }
+
+  &.preloader--hidden {
+    animation: delayedFadeOut 0.3s linear .5s 1 forwards;
+    .preloader__bar {
+      animation: resetWidth 0s linear .5s 1 forwards;
+      padding-right: 0;
+    }
+  }
+
+  &.preloader--visible {
+    .preloader__bar {
+      box-sizing: content-box;
+      padding-right: 1px;
+      animation: slowGrow 30s linear 0s 1 forwards;
+    }
+  }
+
+
+  @keyframes slowGrow {
+    //TODO: the growing of the block never should be larger than the block width.
+    0% {padding-right: 1px;}
+    100% {padding-right: 410px;} // it shoud be the the block width - 10%
+  }
+
+  @keyframes resetWidth {
+    0% {}
+    100% {width: 0%;}
+  }
+
+  @keyframes delayedFadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @keyframes glowCrossing {
+    0% {left: 0;}
+    80% {left: 120%;}
+    100% {left: 120%;}
+  }
+
+}

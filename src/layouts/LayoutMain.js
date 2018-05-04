@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Libraries
-// import ScrollAnimation from 'react-animate-on-scroll';
+import Loader from '../components/Loader';
 
 // Components
 import Alert     from '../components/Alert';
@@ -14,6 +14,8 @@ export default class LayoutMain extends Component {
     super(props);
     this.state = {
       name: 'LayoutMain',
+      pendingItems: 0, // if > 0 the loading bar is displayed
+      totalItems: 0,
     };
   }
 
@@ -21,18 +23,30 @@ export default class LayoutMain extends Component {
   _callAlert = (c) => this._alert = c;
   _showAlert = (type, message) => this._alert.open(type, message);
 
+  // Preloader settings
+  _setLoader = (ammount) => {
+    let updatedCount = this.state.pendingItems + ammount;
+    this.setState({pendingItems: updatedCount});
+    if (ammount.toString().charAt(0) !== "-") {
+      this.setState({totalItems: updatedCount})
+    }
+  };
+
   render() {
     const {pendingItems, totalItems} = this.state;
     const childrenWithProps = React.cloneElement(this.props.children, {
-      showAlert: this._showAlert
+      showAlert: this._showAlert,
+      pendingItems: pendingItems,
+      setLoader: this._setLoader
     });
 
     return (
-      <div id="app-layout" className="app-layout--main">
+      <div id="app-layout" className={`app-layout--main ${pendingItems>0 ? 'is-loading' : 'is-ready'}`}>
+        <Loader pendingItems={pendingItems} totalItems={totalItems} />
         <Alert ref={this._callAlert} />
-        <AppHeader id="app-header"/>
+        <AppHeader id="app-header" pendingItems={pendingItems} setLoader={this._setLoader}/>
          {childrenWithProps}
-        <AppFooter/>
+        <AppFooter pendingItems={pendingItems} setLoader={this._setLoader}/>
       </div>
     );
   }

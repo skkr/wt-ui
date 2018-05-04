@@ -9,6 +9,18 @@ export default class AppFooter extends Component {
     };
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.setLoader(+1);
+    }, 1);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.setLoader(-1);
+    }, 500);
+  }
+
   render() {
     const {loadItems} = this.props;
 

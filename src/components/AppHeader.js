@@ -10,6 +10,18 @@ export default class AppHeader extends Component {
     };
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.setLoader(+1);
+    }, 1);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.setLoader(-1);
+    }, 400);
+  }
+
   render() {
     const {currentUser} = this.context;
 
