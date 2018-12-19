@@ -63,13 +63,14 @@ const photoSlider = {
     }]
   },
   data: [
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/1.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/7.jpeg", desc: "Travel Startup Pitch Competition (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/6.jpeg", desc: "Travel Tech Meetup (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/2.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/3.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/4.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
-    {name: "", img: "https://windingtree.com/assets/img/photo-gallery/5.jpg", desc: "Travel Tech Con 2018 (San Francisco)"}
+    {src: "https://windingtree.com/assets/img/photo-gallery/1.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+    {mediaType: "video", src: "https://www.youtube.com/embed/LHjwNqvLTak", desc: "Travel Tech Con 2018 (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/7.jpeg", desc: "Travel Startup Pitch Competition (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/6.jpeg", desc: "Travel Tech Meetup (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/2.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/3.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/4.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+    {src: "https://windingtree.com/assets/img/photo-gallery/5.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
   ]
 }
 
@@ -349,7 +350,7 @@ storiesOf('Containers/ Slider', module)
     {/* Modals */}
     {photoSlider.data.map((item, index) => {
       return (
-        <div className="modal-img modal fade" id={'modal-img-' + (index + 1)} tabindex={'-'+ (index + 1)} role="preview" aria-hidden="true">
+        <div className="modal-img modal fade" id={'modal-img-' + (index + 1)} tabIndex={'-'+ (index + 1)} role="preview" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div className="modal-content">
               <div className="modal-body">
@@ -421,7 +422,7 @@ storiesOf('Containers/ Modal', module)
         Launch image modal
       </button>
 
-      <div className="modal modal-img fade" id="img-modal-demo" tabindex="-1" role="preview" aria-hidden="true">
+      <div className="modal modal-img fade" id="img-modal-demo" tabIndex="-1" role="preview" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div className="modal-content">
             <div className="modal-body">
@@ -441,17 +442,20 @@ storiesOf('Containers/ Modal', module)
         Launch carousel modal
       </button>
 
-      <div className="modal modal-carousel" id="carousel-modal-demo" tabindex="-1" role="slideshow" aria-hidden="true">
+      <div className="modal modal-carousel" id="carousel-modal-demo" tabIndex="-1" role="slideshow" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Travel Tech Con 2018</h5>
+              {/* Album Title */}
+              <h5 className="modal-title">
+                Travel Tech Con 2018
+                </h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <i className="mdi mdi-close"></i>
               </button>
             </div>
             <div className="modal-body d-flex align-items-center">
-              <BSCarousel title="Travel Tech Con 2018" list={photoSlider.data} hasIndicators />
+              <BSCarousel list={photoSlider.data} hasIndicators />
             </div>
           </div>
         </div>

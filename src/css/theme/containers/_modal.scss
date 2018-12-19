@@ -131,7 +131,22 @@
             min-height: 750px;
             min-height: calc(100vh - 400px);
 
-            img {
+            .video-wrapper {
+              position: relative;
+              padding-bottom: 56.25%; /* 16:9 */
+              padding-top: 25px;
+              height: 0;
+
+              iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .video-wrapper, img {
               position: absolute;
               top: 0;
               bottom: 0;
@@ -150,13 +165,22 @@
           }
         }
 
+        // Resolve overlaping issue with video controls
+        @media screen and (max-width: 1309px) {
+          .carousel-control-prev,
+          .carousel-control-next {
+            height: 100px;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+        }
 
         @media screen and (min-width: 1310px) {
           .carousel-control-prev,
           .carousel-control-next {
             width: 200px;
           }
-          .carousel-control-prev {left: -200px;}
+          .carousel-control-prev {left: -200px; }
           .carousel-control-next {right: -200px;}
         }
 
