@@ -9,7 +9,7 @@ const Carousel = ({ list, height, hasIndicators }) => {
       {
         (media.mediaType == 'video')
         ? (
-          <div className="video-wrapper">
+          <div className="video-fluid">
             <iframe
               className="youtube-video"
               src={media.src}

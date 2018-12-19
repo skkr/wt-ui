@@ -23,7 +23,7 @@ import Carousel from './containers/carousel.md';
 import PhotoSlider from './containers/photo-slider.md';
 
 import Modal from './containers/modal.md';
-import ModalImage from './containers/modal-image.md';
+import ModalMedia from './containers/modal-image.md';
 import ModalCarousel from './containers/modal-carousel.md';
 
 // Icon images
@@ -64,7 +64,6 @@ const photoSlider = {
   },
   data: [
     {src: "https://windingtree.com/assets/img/photo-gallery/1.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
-    {mediaType: "video", src: "https://www.youtube.com/embed/LHjwNqvLTak", desc: "Travel Tech Con 2018 (San Francisco)"},
     {src: "https://windingtree.com/assets/img/photo-gallery/7.jpeg", desc: "Travel Startup Pitch Competition (San Francisco)"},
     {src: "https://windingtree.com/assets/img/photo-gallery/6.jpeg", desc: "Travel Tech Meetup (San Francisco)"},
     {src: "https://windingtree.com/assets/img/photo-gallery/2.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
@@ -72,6 +71,19 @@ const photoSlider = {
     {src: "https://windingtree.com/assets/img/photo-gallery/4.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
     {src: "https://windingtree.com/assets/img/photo-gallery/5.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
   ]
+}
+
+const mediaGallery = {
+data: [
+  {src: "https://windingtree.com/assets/img/photo-gallery/1.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+  {mediaType: "video", src: "https://www.youtube.com/embed/LHjwNqvLTak", desc: "Travel Tech Con 2018 (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/7.jpeg", desc: "Travel Startup Pitch Competition (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/6.jpeg", desc: "Travel Tech Meetup (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/2.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/3.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/4.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+  {src: "https://windingtree.com/assets/img/photo-gallery/5.jpg", desc: "Travel Tech Con 2018 (San Francisco)"},
+]
 }
 
 
@@ -339,8 +351,8 @@ storiesOf('Containers/ Slider', module)
     <Slider className="photo-slider" {...photoSlider.settings}>
       {photoSlider.data.map((item, index) => {
         return (
-        <figure data-toggle="modal" data-target={'#modal-img-' + (index + 1)}>
-          <img src={item.img} alt={item.name} className="img-fluid"/>
+        <figure data-toggle="modal" data-target={'#modal-media-' + (index + 1)}>
+          <img src={item.src} alt={item.desc} className="img-fluid"/>
           <figcaption>
             {item.desc}
           </figcaption>
@@ -350,11 +362,11 @@ storiesOf('Containers/ Slider', module)
     {/* Modals */}
     {photoSlider.data.map((item, index) => {
       return (
-        <div className="modal-img modal fade" id={'modal-img-' + (index + 1)} tabIndex={'-'+ (index + 1)} role="preview" aria-hidden="true">
+        <div className="modal-media modal fade" id={'modal-media-' + (index + 1)} tabIndex={'-'+ (index + 1)} role="preview" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div className="modal-content">
               <div className="modal-body">
-                <img src={item.img} alt={item.name} className="img-fluid"/>
+                <img src={item.src} alt={item.desc} className="img-fluid"/>
               </div>
             </div>
           </div>
@@ -414,19 +426,41 @@ storiesOf('Containers/ Modal', module)
       </div>
     </div>
   ))
-  // Modal (image)
-  .add('Modal (image)', withCodePreview(ModalImage, () =>
+  // Modal (media)
+  .add('Modal (media)', withCodePreview(ModalMedia, () =>
     <div className="bg-accent">
 
       <button type="button" className="btn btn-outline-light btn-sm m-1" data-toggle="modal" data-target="#img-modal-demo">
         Launch image modal
       </button>
 
-      <div className="modal modal-img fade" id="img-modal-demo" tabIndex="-1" role="preview" aria-hidden="true">
+      <button type="button" className="btn btn-outline-light btn-sm m-1" data-toggle="modal" data-target="#video-modal-demo">
+        Launch video modal
+      </button>
+
+      <div className="modal modal-media fade" id="img-modal-demo" tabIndex="-1" role="preview" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div className="modal-content">
             <div className="modal-body">
-              <img src={photoSlider.data[0].img} alt={photoSlider.data[0].name}/>
+              <img src={mediaGallery.data[0].src} alt={mediaGallery.data[0].desc}/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="modal modal-media fade" id="video-modal-demo" tabIndex="-1" role="preview" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div className="modal-content">
+            <div className="modal-body">
+              <div className="video-fluid">
+                <iframe
+                  className="youtube-video"
+                  src={mediaGallery.data[1].src}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -455,7 +489,7 @@ storiesOf('Containers/ Modal', module)
               </button>
             </div>
             <div className="modal-body d-flex align-items-center">
-              <BSCarousel list={photoSlider.data} hasIndicators />
+              <BSCarousel list={mediaGallery.data} hasIndicators />
             </div>
           </div>
         </div>
