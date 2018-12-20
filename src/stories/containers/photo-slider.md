@@ -13,7 +13,7 @@ Complement with the **Image Modal** component to display the images in large vie
 ```html
 <div class="photo-slider" {...photoSlider.settings}>
   <figure data-toggle="modal" data-target={'#img-modal-' + (index + 1)}>
-    <img src={item.img} alt={item.name} class="img-fluid"/>
+    <img src={item.src} alt={item.desc} class="img-fluid"/>
     <figcaption>
       {item.desc}
     </figcaption>
@@ -59,6 +59,3 @@ $(function () {
 
 });
 ```
-
->
-

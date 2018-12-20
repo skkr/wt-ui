@@ -113,11 +113,11 @@ storiesOf('Layout', module)
     <article className="app-section bg-grad">
       <div className="container">
         <div className="row flex-column flex-md-row align-items-center">
-          <div className="col-md-8 mb-1 mb-md-0">
+          <div className="col-lg-8 mb-1 mb-md-0 text-center text-lg-left">
             <h2 className="text-white">
               Designed for Driving Innovation
             </h2>
-            <p className="lead text-white">
+            <p className="lead text-white text-sm-lg">
               Winding Tree is a non-profit foundation that drives the development of open-source protocols to allow any company, big or small, or even an individual developer, to try them out and integrate with the platform in no time.
             </p>
             <ul className="list-inline">
@@ -164,9 +164,9 @@ storiesOf('Layout', module)
             </ul>
 
           </div>
-          <div className="col-md-4 text-center">
-            <i className="mdi mdi-xxl mdi-github-circle text-white"></i>
-            <a href="/startups-and-developers.html" className="btn btn-outline-light mt-1">
+          <div className="col-lg-4 text-center">
+            <i className="mdi mdi-xxl mdi-github-circle text-white d-none d-lg-inline "></i>
+            <a href="/startups-and-developers.html" className="btn btn-outline-light mt-0 mt-lg-1">
               Community
             </a>
           </div>

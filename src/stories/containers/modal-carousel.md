@@ -1,10 +1,10 @@
 # Modal (carousel)
 
-<p class="lead">Use carousel modals to display an image slideshow in full screen.</p>
+<p class="lead">Use carousel modals to display gallery of images and videos in full screen.</p>
 
-To use this modals, add `.modal-carousel` next to the `.modal` class. Header is required, use the title to indicate the slideshow name.
+To use this modals, add `.modal-carousel` next to the `.modal` class. Header is required, use the title to indicate the album name.
 
-Note that the images size will be adjusted to maintain the same height.
+Note that the size of images and videos will be adjusted to maintain the same height.
 
 <!-- STORY -->
 

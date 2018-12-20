@@ -31,7 +31,7 @@ function loadStories() {
   require('../src/stories/layout.stories.js');
   require('../src/stories/preset-blocks.stories.js');
   require('../src/stories/typography.stories.js');
-  require('../src/stories/images.stories.js');
+  require('../src/stories/media.stories.js');
   require('../src/stories/controls.stories.js');
   require('../src/stories/navigation.stories.js');
   require('../src/stories/containers.stories.js');

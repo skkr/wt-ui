@@ -25,6 +25,29 @@
   strong {font-weight: 900 !important;}
 }
 
+@include media-breakpoint-down('sm') {
+  .text-sm-sm {
+    &, &:before {
+      font-size: $fontSizeSm !important;
+    }
+  }
+  .text-sm-md {
+    &, &:before {
+      font-size: $fontSizeMd !important;
+    }
+  }
+  .text-sm-lg {
+    &, &:before {
+      font-size: $fontSizeLg !important;
+    }
+  }
+  .text-sm-xl {
+    &, &:before {
+      font-size: $fontSizeXl !important;
+    }
+  }
+}
+
 // Decorators
 .block-shadow {
   box-shadow: $shadow !important;

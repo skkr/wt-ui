@@ -1,28 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Carousel = ({ list, height, title, hasIndicators }) => {
+const Carousel = ({ list, height, hasIndicators }) => {
   const randomId = `carousel-${Math.random().toString(36).substring(7)}`;
 
-  const imageList = list.map((image, index) => (
-    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={`carousel-${randomId}-item-${image.img}`}>
+  const mediaList = list.map((media, index) => (
+    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={`carousel-${randomId}-item-${media.src}`}>
       {
+        (media.mediaType == 'video')
+        ? (
+          <div className="video-fluid">
+            <iframe
+              className="youtube-video"
+              src={media.src}
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )
         // Use a height to force a consistent aspect ratio on images (doesn't work in modals)
-        height
+        : height
           ? (
-            <div className="img-crop" style={{ backgroundImage: `url(${image.img})`, height }}>
-              <img className="img-fluid w-100" src={image.img} alt={image.img} />
+            <div className="img-crop" style={{ backgroundImage: `url(${media.src})`, height }}>
+              <img className="img-fluid w-100" src={media.src} alt={media.src} />
             </div>
           )
-          : <img className="img-fluid w-100 " src={image.img} alt={image.desc} />
+          : <img className="img-fluid w-100 " src={media.src} alt={media.desc} />
       }
     </div>
   ));
 
-  const indicators = list.map((image, index) => (
+  const indicators = list.map((media, index) => (
     // Indicators must be used only in modals
     <li
-      key={`carousel-${randomId}-indicator-${image.img}`}
+      key={`carousel-${randomId}-indicator-${media.src}`}
       data-target={`#${randomId}`}
       data-slide-to={index}
       className={index === 0 ? 'active' : ''}
@@ -34,16 +46,8 @@ const Carousel = ({ list, height, title, hasIndicators }) => {
     <div id={randomId} className="carousel carousel-fade slide" data-ride="carousel" data-interval="0">
 
       <div className="carousel-inner">
-        {imageList}
+        {mediaList}
       </div>
-
-      {/* { title
-        && (
-        <header>
-          <h3 className="text-white text-center mb-2">{title}</h3>
-        </header>
-        )
-      } */}
 
       { hasIndicators
         && (
@@ -74,7 +78,6 @@ Carousel.defaultProps = {
 Carousel.propTypes = {
   list: PropTypes.instanceOf(Array).isRequired,
   height: PropTypes.number,
-  title: PropTypes.string,
   hasIndicators: PropTypes.bool,
 };
 
