@@ -112,8 +112,15 @@ storiesOf('Typography/Inline text elements', module)
   // Links
   .add('Links', withCodePreview(Links, () =>
     <div>
+      <h6>Default link style</h6>
       <p> <a href="https://windingtree.com" target="_blank">Link example.</a> </p>
       <p> <a href="https://windingtree.com" target="_blank" rel="noopener noreferrer">Second link example.</a> </p>
+
+      <hr className="my-1"/>
+
+      <h6>Text link modifier</h6>
+      <p> <a className="text-link" href="https://windingtree.com" target="_blank" rel="noopener noreferrer">Underlined link.</a> </p>
+      <p> <button className="text-link" type="button">Button with link style.</button> </p>
     </div>
   ))
   // Abbreviations
@@ -172,7 +179,7 @@ storiesOf('Typography/Blockquotes', module)
       </p>
       <footer className="blockquote-footer">
         <div className="user user-sm">
-        <img className="user-img" src="http://windingtree.com/assets/img/in-the-press/quotes/avatars/lisa-farrar.jpg" width="60" height="60" alt="Lisa Farrar"/>
+          <img className="user-img" src="http://windingtree.com/assets/img/in-the-press/quotes/avatars/lisa-farrar.jpg" width="60" height="60" alt="Lisa Farrar"/>
           <div className="user-data">
             <p className="user-name">Lisa Farrar</p>
             <p className="user-role">Chief digital officer at Nordic Choice Hotels</p>
@@ -185,44 +192,14 @@ storiesOf('Typography/Blockquotes', module)
   ))
   // Blockquote (card)
   .add('Blockquote (card)', withCodePreview(BlockquoteCard, () =>
-    <div className="card-deck justify-content-center">
+    <div>
+      <div className="card-deck justify-content-center">
 
-      <blockquote className="blockquote card">
-        <div className="card-body">
-          <p className="blockquote-body">
-            <i className="mdi mdi-36px mdi-format-quote-open"></i>
-            In a decentralized travel distribution system, for example, there is no room for rent-seeking intermediaries, therefore the wealth they are currently hoarding will be distributed to the rest of the network, making travel cheaper for travelers and more profitable for travel companies.
-            <i className="mdi mdi-36px mdi-format-quote-close"></i>
-          </p>
-          <footer className="blockquote-footer">
-            <div className="user">
-              <svg className="user-img" xmlns="http://www.w3.org/2000/svg" width="108" height="120" viewBox="0 0 108 120">
-                <defs>
-                  <path d="M53.5135135,0 C51.5026531,0 49.0462292,0.612640549 46.7027027,1.93548387 L6.81081081,25.1612903 C2.70204694,27.2838443 0,31.9809136 0,36.7741935 L0,83.2258065 C0,87.9373729 2.70204694,92.6344421 6.81081081,94.8387097 L46.7027027,118.064516 C49.0462292,119.346494 51.5026531,120 53.5135135,120 C56.4564123,120 58.9127966,119.346494 61.2972973,118.064516 L101.189189,94.8387097 C105.257015,92.6344421 108,87.9373729 108,83.2258065 L108,36.7741935 C108,31.9809136 105.257015,27.2838443 101.189189,25.1612903 L61.2972973,1.93548387 C58.9127966,0.612640549 56.4564123,0 53.5135135,0 Z" id="path"></path>
-                </defs>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <mask id="mask" fill="white">
-                    <use xlinkHref="#path"></use>
-                  </mask>
-                  <image mask="url(#mask)" width="108" height="120" xlinkHref="http://windingtree.com/assets/img/team/max.jpg"></image>
-                </g>
-              </svg>
-              <div className="user-data">
-                <p className="user-name">Maksim Izmaylov</p>
-                <p className="user-role">Founder, CEO</p>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </blockquote>
-
-      <div class="w-100 d-block d-lg-none"></div>
-
-      <blockquote className="blockquote card">
-        <div className="card-body">
+        <blockquote className="blockquote card">
+          <div className="card-body">
             <p className="blockquote-body">
               <i className="mdi mdi-36px mdi-format-quote-open"></i>
-              The Internet is a decentralized ecosystem. Nevertheless, the platforms which are built on top of the Internet tend to monopolize it. Blockchain can help preserving Internet's decentralized nature. The Internet would not exist without open-source and still it is an uneasy task to find proper funding strategies to support open-source projects. Blockchain is bringing value directly attached to the code.
+              In a decentralized travel distribution system, for example, there is no room for rent-seeking intermediaries, therefore the wealth they are currently hoarding will be distributed to the rest of the network, making travel cheaper for travelers and more profitable for travel companies.
               <i className="mdi mdi-36px mdi-format-quote-close"></i>
             </p>
             <footer className="blockquote-footer">
@@ -235,17 +212,86 @@ storiesOf('Typography/Blockquotes', module)
                     <mask id="mask" fill="white">
                       <use xlinkHref="#path"></use>
                     </mask>
-                    <image mask="url(#mask)" width="108" height="120" xlinkHref="http://windingtree.com/assets/img/team/jakub.jpg"></image>
+                    <image mask="url(#mask)" width="108" height="120" xlinkHref="http://windingtree.com/assets/img/team/max.jpg"></image>
                   </g>
                 </svg>
                 <div className="user-data">
-                  <p className="user-name">Jakub Vysoky</p>
-                  <p className="user-role">Founder, CTO</p>
+                  <p className="user-name">Maksim Izmaylov</p>
+                  <p className="user-role">Founder, CEO</p>
                 </div>
               </div>
             </footer>
+          </div>
+        </blockquote>
+
+        <div class="w-100 d-block d-lg-none"></div>
+
+        <blockquote className="blockquote card">
+          <div className="card-body">
+              <p className="blockquote-body">
+                <i className="mdi mdi-36px mdi-format-quote-open"></i>
+                The Internet is a decentralized ecosystem. Nevertheless, the platforms which are built on top of the Internet tend to monopolize it. Blockchain can help preserving Internet's decentralized nature. The Internet would not exist without open-source and still it is an uneasy task to find proper funding strategies to support open-source projects. Blockchain is bringing value directly attached to the code.
+                <i className="mdi mdi-36px mdi-format-quote-close"></i>
+              </p>
+              <footer className="blockquote-footer">
+                <div className="user">
+                  <svg className="user-img" xmlns="http://www.w3.org/2000/svg" width="108" height="120" viewBox="0 0 108 120">
+                    <defs>
+                      <path d="M53.5135135,0 C51.5026531,0 49.0462292,0.612640549 46.7027027,1.93548387 L6.81081081,25.1612903 C2.70204694,27.2838443 0,31.9809136 0,36.7741935 L0,83.2258065 C0,87.9373729 2.70204694,92.6344421 6.81081081,94.8387097 L46.7027027,118.064516 C49.0462292,119.346494 51.5026531,120 53.5135135,120 C56.4564123,120 58.9127966,119.346494 61.2972973,118.064516 L101.189189,94.8387097 C105.257015,92.6344421 108,87.9373729 108,83.2258065 L108,36.7741935 C108,31.9809136 105.257015,27.2838443 101.189189,25.1612903 L61.2972973,1.93548387 C58.9127966,0.612640549 56.4564123,0 53.5135135,0 Z" id="path"></path>
+                    </defs>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <mask id="mask" fill="white">
+                        <use xlinkHref="#path"></use>
+                      </mask>
+                      <image mask="url(#mask)" width="108" height="120" xlinkHref="http://windingtree.com/assets/img/team/jakub.jpg"></image>
+                    </g>
+                  </svg>
+                  <div className="user-data">
+                    <p className="user-name">Jakub Vysoky</p>
+                    <p className="user-role">Founder, CTO</p>
+                  </div>
+                </div>
+              </footer>
+          </div>
+        </blockquote>
+
+      </div>
+
+      <hr className="mt-1 mb-2"/>
+
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <div className="card card-pointer-left">
+            <div className="card-body">
+              <blockquote className="blockquote">
+                <p className="blockquote-body text-left">
+                  <i className="mdi mdi-36px mdi-format-quote-open"></i>
+                  Welcome to our community, Jason!
+                  Let us know you better to understand what we can offer each other.
+                  <i className="mdi mdi-36px mdi-format-quote-close"></i>
+                </p>
+              </blockquote>
+            </div>
+          </div>
         </div>
-      </blockquote>
+      </div>
+
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <div className="card card-pointer-right">
+            <div className="card-body">
+              <blockquote className="blockquote">
+                <p className="blockquote-body text-left">
+                  <i className="mdi mdi-36px mdi-format-quote-open"></i>
+                  Welcome to our community, Jason!
+                  Let us know you better to understand what we can offer each other.
+                  <i className="mdi mdi-36px mdi-format-quote-close"></i>
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   ))
