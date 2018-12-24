@@ -33,6 +33,34 @@ small {
 }
 
 // Text & Link modifiers
+.text-link {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 12px;
+    top: 50%;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $gray-300;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+    &::after {
+      opacity: .25;
+      border-bottom-color: $link-hover-color;
+    }
+  }
+}
+
 
 .text-alpha,
 a.text-alpha {

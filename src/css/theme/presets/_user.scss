@@ -5,13 +5,24 @@
   align-items: center;
   flex-direction: column;
 
+  &.user-items-start{
+    .user-data {
+      padding-top: 5px;
+    }
+  }
+
   @include media-breakpoint-up('sm') {
-  flex-direction: row;
+    flex-direction: row;
+    &.user-items-start{
+      align-items: flex-start ;
+    }
   }
 
   font-style: normal;
   [class*="user-"] {margin-bottom: 0;}
   .user-img {
+    min-width: 108px;
+    min-height: 120px;
     margin: 0;
     margin-bottom: ($spacer);
 
@@ -20,7 +31,12 @@
       margin-bottom: 0;
     }
   }
-  .user-data {}
+  .user-data {
+    @include media-breakpoint-down('xs') {
+      text-align: center;
+    }
+
+  }
   .user-name {
     @extend .h4;
   }
@@ -28,12 +44,20 @@
     font-size: $fontSizeSm;
     text-transform: uppercase;
   }
+  .user-bio {
+    .text-link {
+      margin: $spacer 0 ($spacer + ($spacer / 2));
+    }
+  }
 
 
 
   &.user-sm {
     .user-img {
       @extend .rounded-circle;
+      min-width: 60px;
+      min-height: 60px;
+
       @include media-breakpoint-up('md') {
         margin-bottom: 0;
         margin-right: ($spacer * 2);
