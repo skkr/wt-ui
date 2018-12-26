@@ -6,15 +6,14 @@ Set the background of an element to any contextual class. Anchor components will
 <!-- STORY -->
 
 ```html
-<!-- Please use only accent and light backgrounds -->
-
-<div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
-<div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
-<div class="p-3 mb-2 bg-success text-white">.bg-success</div>
-<div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
-<div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
-<div class="p-3 mb-2 bg-info text-white">.bg-info</div>
-<div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
-<div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
-<div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+<div class="bg-primary">.bg-primary</div>
+<div class="bg-secondary">.bg-secondary</div>
+<div class="bg-success">.bg-success</div>
+<div class="bg-danger">.bg-danger</div>
+<div class="bg-warning">.bg-warning</div>
+<div class="bg-info">.bg-info</div>
+<div class="bg-light">.bg-light</div>
+<div class="bg-accent-light">.bg-accent-light</div>
+<div class="bg-dark">.bg-dark</div>
+<div class="bg-white">.bg-white</div>
 ```

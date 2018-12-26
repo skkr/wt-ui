@@ -84,11 +84,14 @@ storiesOf('Utilities', module)
         </div>
       </div>
       <div className="row">
-        <div className="col">
-          <div className="p-2 mb-2 bg-dark text-white border border-dark">.bg-dark</div>
+      <div className="col">
+          <div className="p-2 mb-2 bg-accent-light text-dark">.bg-accent-light</div>
         </div>
         <div className="col">
           <div className="p-2 mb-2 bg-white text-dark border border-light">.bg-white</div>
+        </div>
+        <div className="col">
+          <div className="p-2 mb-2 bg-dark text-white">.bg-dark</div>
         </div>
       </div>
 

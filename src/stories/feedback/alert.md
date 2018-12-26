@@ -2,7 +2,9 @@
 
 <p class="lead">Use the alert component to provide complementary information to users on a specific section of the page.</p>
 
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, must be combined with one of the four most common contextual classes (`.alert-[success|info|warning|danger]`). For inline dismissal, use the [alerts jQuery plugin](https://getbootstrap.com/docs/4.0/components/alerts/#dismissing).
+Alerts are available for any length of text, as well as an optional dismiss button. For proper styling,
+must be combined with one of the four most common contextual classes (`.alert-[success|info|warning|danger]`) or the `alert-accent-light` variant.
+For inline dismissal, use the [alerts jQuery plugin][0]
 
 <!-- STORY -->
 
@@ -19,6 +21,15 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 <div class="alert alert-danger" role="alert">
   This is a danger alert, and includes a <a href="#">link</a>!
 </div>
+
+
+<!-- Alert with centered text an a button -->
+
+<div className="alert alert-accent-light text-center px-1">
+  <p className="d-block d-md-inline mr-0 mr-md-2">If you want to invite Winding Tree to you event please send us an email</p>
+  <a href="mailto:info@windingtree.com" className="btn btn-primary">Send Email</a>
+</div>
+
 
 <!-- Alternative content layout and close button -->
 
@@ -38,3 +49,5 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 </div>
 </div>
 ```
+
+[0]: (https://getbootstrap.com/docs/4.0/components/alerts/#dismissing).

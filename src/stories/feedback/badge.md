@@ -10,7 +10,8 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 
 <span class="badge badge-primary">Primary</span>
 <span class="badge badge-secondary">Secondary</span>
-<span class="badge badge-accent">Secondary</span>
+<span class="badge badge-accent">Accent</span>
+<span class="badge badge-accent-light">Accent Light</span>
 <span class="badge badge-success">Success</span>
 <span class="badge badge-danger">Danger</span>
 <span class="badge badge-warning">Warning</span>
@@ -22,7 +23,8 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 
 <span class="badge badge-pill badge-primary">Primary</span>
 <span class="badge badge-pill badge-secondary">Secondary</span>
-<span class="badge badge-pill badge-accent">Secondary</span>
+<span class="badge badge-pill badge-accent">Accent</span>
+<span class="badge badge-pill badge-accent-light">Accent Light</span>
 <span class="badge badge-pill badge-success">Success</span>
 <span class="badge badge-pill badge-danger">Danger</span>
 <span class="badge badge-pill badge-warning">Warning</span>
