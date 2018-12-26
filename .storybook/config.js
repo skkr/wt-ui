@@ -29,7 +29,6 @@ function loadStories() {
   require('../src/stories/overview.stories.js');
   require('../src/stories/branding.stories.js');
   require('../src/stories/layout.stories.js');
-  require('../src/stories/preset-blocks.stories.js');
   require('../src/stories/typography.stories.js');
   require('../src/stories/media.stories.js');
   require('../src/stories/controls.stories.js');
@@ -37,6 +36,8 @@ function loadStories() {
   require('../src/stories/containers.stories.js');
   require('../src/stories/feedback.stories.js');
   require('../src/stories/utilities.stories.js');
+  require('../src/stories/presets.stories.js');
+  require('../src/stories/templates.stories.js');
 }
 
 configure(loadStories, module);

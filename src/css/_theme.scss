@@ -1,7 +1,7 @@
 // THEME - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// These styles overwrite the Bootstrap defaults to align the
-// look and feel of the framework to the Winding Tree brand.
+// These styles overwrite (or extend) the Bootstrap defaults to align
+// the look and feel of the framework to the Winding Tree brand.
 
 // Typography
 @import "theme/typography/typography";
@@ -9,10 +9,6 @@
 
 // Assets
 @import "theme/assets/icons";
-
-// Presets
-@import "theme/presets/user";
-@import "theme/presets/logo-gallery";
 
 // Media
 @import "theme/media/image";
@@ -31,6 +27,7 @@
 // Containers
 @import "theme/containers/card";
 @import "theme/containers/modal";
+@import "theme/containers/user";
 @import "theme/containers/carousel";
 @import "theme/containers/slick-carousel";
 
@@ -39,3 +36,6 @@
 @import "theme/feedback/loader";
 @import "theme/feedback/alert";
 @import "theme/feedback/msg";
+
+// Presets
+@import "theme/presets/logo-gallery";
