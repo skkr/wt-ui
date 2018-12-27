@@ -8,14 +8,15 @@ import { linkTo } from "@storybook/addon-links";
 import { doc } from 'storybook-readme';
 
 // Included components
-import Resizable from 're-resizable';
 import { withCodePreview } from './HOCs/with-docs'
+import { withCollapse } from "./HOCs/bootstrap";
 import Slider from "react-slick";
 
 // Readme files
-import DevsMarquee from './preset-blocks/devs-marquee.md';
-import PartnersMarquee from './preset-blocks/partners-marquee.md';
-import LogoGallery from './preset-blocks/logo-gallery.md';
+import DevsMarquee from './presets/devs-marquee.md';
+import PartnersMarquee from './presets/partners-marquee.md';
+import LogoGallery from './presets/logo-gallery.md';
+
 
 // COMPONENTS
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -154,8 +155,7 @@ const gallery = {
   }
 }
 
-// APP HEADER
-storiesOf('Preset Blocks', module)
+storiesOf('Presets', module)
 
   // Devs Marquee
   .add('Devs Marquee', withCodePreview(DevsMarquee, () =>
@@ -166,7 +166,7 @@ storiesOf('Preset Blocks', module)
 
         <div className="devs-marquee-dev">
           <svg xmlns="http://www.w3.org/2000/svg" width="54" height="60" viewBox="0 0 54 60" className="devs-marquee-dev-img">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <mask id="mask2" fill="white">
                 <path d="M26.76,0a7.17,7.17,0,0,0-3.41,1L3.41,12.58A6.62,6.62,0,0,0,0,18.39V41.61a6.72,6.72,0,0,0,3.41,5.81L23.35,59a7.4,7.4,0,0,0,3.41,1,7.9,7.9,0,0,0,3.89-1L50.59,47.42A6.76,6.76,0,0,0,54,41.61V18.39a6.66,6.66,0,0,0-3.41-5.81L30.65,1A7.7,7.7,0,0,0,26.76,0Z" id="path2"></path>
               </mask>

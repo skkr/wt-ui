@@ -1,6 +1,6 @@
 {
   "name": "@windingtree/wt-ui",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Winding Tree's UI Components",
   "keywords": [
     "bootstrap",
@@ -26,6 +26,8 @@
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
+    "react-collapse": "^4.0.3",
+    "react-motion": "^0.5.2",
     "react-slick": "^0.23.2",
     "slick-carousel": "^1.8.1"
   },

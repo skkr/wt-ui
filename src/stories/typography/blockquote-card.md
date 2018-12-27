@@ -5,6 +5,8 @@ and add the `.card-deck` class on its container keeping the height and width con
 
 If necessary, use `.justify-content-center` to center the `.card-deck` horizontally.
 
+Optionally place a standard `.blockquote` inside a card with **pointer** modifiers.
+
 <!-- STORY -->
 
 ```html
@@ -24,5 +26,20 @@ If necessary, use `.justify-content-center` to center the `.card-deck` horizonta
     </div>
   </blockquote>
 
+  <!-- Card Pointer with Blockquote -->
+  <div className="card card-pointer-left">
+    <div className="card-body">
+      <!-- blockquote -->
+    </div>
+  </div>
+
+  <div className="card card-pointer-right">
+    <div className="card-body">
+      <!-- blockquote -->
+    </div>
+  </div>
+
+
 </div>
 ```
+
