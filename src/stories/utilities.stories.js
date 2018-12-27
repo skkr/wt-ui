@@ -24,7 +24,7 @@ import OtherUtilities from './utilities/other-utilities.md';
 storiesOf('Utilities', module)
 
   // Text Color
-  .add('TextColor', withCodePreview(TextColor, () =>
+  .add('Text Color', withCodePreview(TextColor, () =>
     <div className="row">
       <div className="col">
         <p className="text-primary">.text-primary</p>
@@ -53,7 +53,7 @@ storiesOf('Utilities', module)
     </div>
   ))
   // Background Color
-  .add('BackgroundColor', withCodePreview(BackgroundColor, () =>
+  .add('Background Color', withCodePreview(BackgroundColor, () =>
     <div>
       <div className="row">
         <div className="col">
@@ -84,11 +84,14 @@ storiesOf('Utilities', module)
         </div>
       </div>
       <div className="row">
-        <div className="col">
-          <div className="p-2 mb-2 bg-dark text-white border border-dark">.bg-dark</div>
+      <div className="col">
+          <div className="p-2 mb-2 bg-accent-light text-dark">.bg-accent-light</div>
         </div>
         <div className="col">
           <div className="p-2 mb-2 bg-white text-dark border border-light">.bg-white</div>
+        </div>
+        <div className="col">
+          <div className="p-2 mb-2 bg-dark text-white">.bg-dark</div>
         </div>
       </div>
 

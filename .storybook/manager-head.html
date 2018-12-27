@@ -95,6 +95,27 @@
   [style*="background-color: rgb(255, 254, 170)"] {
     color: #000!important
   }
+  /* Separate latest two items */
+  [style="padding-left: 19px; list-style: none; display: block;"]  > li:nth-last-child(2) {
+    margin-top: 30px;
+  }
+
+  [style="padding-left: 19px; list-style: none; display: block;"] [style="padding-left: 19px; list-style: none; display: block;"]  > li:nth-last-child(2) {
+    margin-top: 0;
+  }
+
+
+  [style="padding-left: 19px; list-style: none; display: block;"]  > li:nth-last-child(2)::before {
+    content: "";
+    display: block;
+    margin-bottom: 30px;
+    border-top: 2px solid #f7f7f7;
+  }
+
+  [style="padding-left: 19px; list-style: none; display: block;"] [style="padding-left: 19px; list-style: none; display: block;"]  > li:nth-last-child(2)::before {
+    display:none;
+  }
+
 
   /* Header */
   [href="https://github.com/windingtree/wt-ui"] {

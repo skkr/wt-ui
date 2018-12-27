@@ -270,3 +270,30 @@
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
+
+
+
+.ReactCollapse--collapse {
+  box-sizing: content-box;
+  padding: ($spacer * 2) 0; // corrects weird jump after expanding
+  border-top: 1px solid $gray-200;
+  &:first-of-type {
+    border: none;
+  }
+  &:hover {
+    cursor: pointer;
+    // background: $accent-light;
+  }
+}
+
+.date-box {
+  display:inline-block;
+  height: 62px;
+  width: 62px;
+  padding: ($spacer);
+  text-align: center;
+  line-height: 1.25;
+  font-weight: bold;
+  border-radius: $border-radius;
+  background-color: $primary;
+}

@@ -9,7 +9,8 @@
     margin-bottom: 0;
   }
 
-  &.alert-warning {
+  &.alert-warning,
+  &.alert-accent-light {
     color: $body-color;
   }
 
@@ -35,7 +36,7 @@
     margin-bottom: 0;
   }
 
-  a {
+  a:not(.btn) {
     @extend .text-alpha-inverse;
     color: inherit;
     font-weight: bold;

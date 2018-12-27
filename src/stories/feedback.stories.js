@@ -33,6 +33,7 @@ storiesOf('Feedback', module)
         <span className="mr-1 badge badge-primary">Primary</span>
         <span className="mr-1 badge badge-secondary">Secondary</span>
         <span className="mr-1 badge badge-accent">Accent</span>
+        <span className="mr-1 badge badge-accent-light">Accent Light</span>
         <span className="mr-1 badge badge-success">Success</span>
         <span className="mr-1 badge badge-danger">Danger</span>
         <span className="mr-1 badge badge-warning">Warning</span>
@@ -45,6 +46,7 @@ storiesOf('Feedback', module)
         <span className="mr-1 badge badge-pill badge-primary">Primary</span>
         <span className="mr-1 badge badge-pill badge-secondary">Secondary</span>
         <span className="mr-1 badge badge-pill badge-accent">Accent</span>
+        <span className="mr-1 badge badge-pill badge-accent-light">Accent Light</span>
         <span className="mr-1 badge badge-pill badge-success">Success</span>
         <span className="mr-1 badge badge-pill badge-danger">Danger</span>
         <span className="mr-1 badge badge-pill badge-warning">Warning</span>
@@ -127,17 +129,24 @@ storiesOf('Feedback', module)
   // Alert
   .add('Alert', withCodePreview(Alert, () =>
     <div>
-      <div className="alert alert-success" role="alert">
+      <div className="alert alert-success px-1" role="alert">
         This is a success alert, and includes a <a href="#">link</a>!
       </div>
-      <div className="alert alert-info" role="alert">
+      <div className="alert alert-info px-1" role="alert">
         This is a info alert, and includes a <a href="#">link</a>!
       </div>
-      <div className="alert alert-warning" role="alert">
+      <div className="alert alert-warning px-1" role="alert">
         This is a warning alert, and includes a <a href="#">link</a>!
       </div>
-      <div className="alert alert-danger" role="alert">
+      <div className="alert alert-danger px-1" role="alert">
         This is a danger alert, and includes a <a href="#">link</a>!
+      </div>
+
+      <h6 className="mt-2">Alert with centered text an a button</h6>
+
+      <div className="alert alert-accent-light text-center px-1">
+        <p className="d-block d-md-inline mr-0 mr-md-2">If you want to invite Winding Tree to you event please send us an email</p>
+        <a href="mailto:info@windingtree.com" className="btn btn-primary">Send Email</a>
       </div>
 
       <h6 className="mt-2">Alternative content layout and close button</h6>
