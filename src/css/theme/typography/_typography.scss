@@ -59,6 +59,13 @@ small {
       border-bottom-color: $link-hover-color;
     }
   }
+
+  &.active {
+    font-weight: bold;
+    white-space: nowrap;
+    color: #000;
+    pointer-events: none;
+  }
 }
 
 
@@ -74,7 +81,7 @@ a.text-alpha:hover {
 a.text-alpha-inverse {
   transition: opacity .2s ease-in-out;
   opacity: 1;
-  &:hover {opacity: .7;}
+  &:hover {opacity: .4;}
 }
 
 // Del
