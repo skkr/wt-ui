@@ -119,6 +119,7 @@ storiesOf('Typography/Inline text elements', module)
       <h6>Text link modifier</h6>
       <p> <a className="text-link" href="https://windingtree.com" target="_blank" rel="noopener noreferrer">Underlined link.</a> </p>
       <p> <button className="text-link" type="button">Button with link style.</button> </p>
+      <p> <button className="text-link active" type="button">Button with link style and active state.</button> </p>
     </div>
   ))
   // Abbreviations
