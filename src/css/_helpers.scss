@@ -4,7 +4,22 @@
 [class*="bg-grad"] { background-color: $purple !important; }
 .bg-grad {background-image: $brandGradient !important;}
 .bg-grad-up {background-image: $brandGradient-up !important;}
-.bg-grad-down {background-image: $brandGradient-down !important;}
+
+// REVIEW
+// .bg-grad-down {background-image: $brandGradient-down !important;}
+.bg-grad-down {
+  background-color: #5f2987 !important;
+  background-image: radial-gradient(circle at 50% 0, #29cb96, #5f2987 66.6%);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px){
+      background-image: url(https://windingtree.com/assets/img/layouts/ready-to-use/bg.png),radial-gradient(circle at 50% 0, #29cb96, #5f2987 66.6%);
+      background-position: center;
+      // background-position: center bottom, bottom center;
+      background-repeat: no-repeat, no-repeat;
+  }
+}
 
 
 // Fonts
