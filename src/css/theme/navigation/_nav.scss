@@ -1,12 +1,16 @@
 
 // NEW COMPONENTS
 .nav-tabs {
+
   .nav-link {
     text-transform: uppercase;
     color: $text-muted;
     border-width: 0 0 0.4rem 0;
 
-    &.active {font-weight:bold;}
+    &.active {
+      font-weight: bold;
+      background: none;
+    }
   }
 }
 
