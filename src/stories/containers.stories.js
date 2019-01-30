@@ -9,6 +9,7 @@ import { withCollapse, withVariableNavBar } from "./HOCs/bootstrap";
 // Included components
 import Slider from "react-slick";
 import BSCarousel from  "../components/Carousel";
+import Accordion from '../components/Accordion'
 
 // Readme files
 // import Jumbotron from './containers/jumbotron.md'; UNDER REVIEW
@@ -18,6 +19,7 @@ import TabbablePanes from './containers/tabbable-panes.md';
 import Figure from './containers/figure.md';
 import Card from './containers/card.md';
 import Collapse from './containers/collapse.md';
+import AccordionMd from './containers/accordion.md';
 import User from './containers/user.md';
 
 import Carousel from './containers/carousel.md';
@@ -317,6 +319,29 @@ storiesOf('Containers', module)
       </div>
     </div>
   )))
+  // Accordion
+  .add('Accordion', withCodePreview(AccordionMd, () =>
+    <Accordion minHeight={70} openItem={0}>
+      <div>
+        <h3>Item 1</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+      </div>
+      <div>
+        <h3>Item 2</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+      </div>
+      <div>
+        <h3>Item 3</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente tenetur doloribus accusamus necessitatibus. Atque quae laborum autem! Aliquam labore eos molestias, delectus esse perspiciatis dolore consectetur debitis reiciendis distinctio enim?</p>
+      </div>
+    </Accordion>
+  ))
   // User
   .add('User', withCodePreview(User, withCollapse(() =>
     <div>
