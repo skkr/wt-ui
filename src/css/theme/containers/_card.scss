@@ -133,9 +133,30 @@ a.card .card-body {
 }
 
 a.card {
-  .card-link {color: $link-color;}
-  &:hover .card-link {
-    color: $link-hover-color;
+  .card-link {
+    @extend .text-link;
+    display: inline-block;
+    color: $link-color;
+  }
+  .btn-link {
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
+    &::after {
+      left: 0;
+      right: 0;
+    }
+  }
+  &:hover .card-footer {
+    .btn-link,
+    .text-link {
+      color: $link-hover-color;
+
+      &::after {
+        opacity: 0.25;
+        border-bottom-color: $link-hover-color;
+      }
+    }
   }
 
 }
