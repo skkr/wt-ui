@@ -240,8 +240,8 @@ storiesOf('Navigation', module)
               </li>
 
               {/* Action button */}
-              <li className="nav-item">
-                <a href="/" className="btn btn-block btn-primary" id="navbar-btn">
+              <li className="nav-item" id="navbar-btn">
+                <a href="/" className="btn btn-block btn-primary">
                   Join Platform
                 </a>
               </li>
